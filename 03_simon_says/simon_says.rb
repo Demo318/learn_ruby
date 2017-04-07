@@ -1,4 +1,3 @@
-#write your code here
 def echo string
   return string
 end
@@ -33,4 +32,23 @@ end
 def first_word entry
   entry = entry.split(" ")
   return entry[0]
+end
+
+def titleize entry
+  little_words = ["and","the","over"]
+  if entry.include? " "
+  entry = entry.split(" ")
+  entry.each.with_index do |x, i|
+    if i == 0
+      entry[0] = entry[0].capitalize
+    elsif little_words.include? x
+      entry[i] = entry[i].downcase
+    else
+      entry[i] = entry[i].capitalize
+    end
+  end
+  return entry.join(" ")
+else
+  return entry.capitalize
+end
 end

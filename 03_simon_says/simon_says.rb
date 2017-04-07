@@ -27,6 +27,10 @@ def start_of_word entry, int = 1
       result.push(chr)
     end
   end
-  puts result.join("")
+  return result.join("")
+end
 
+def first_word entry
+  entry = entry.split(" ")
+  return entry[0]
 end

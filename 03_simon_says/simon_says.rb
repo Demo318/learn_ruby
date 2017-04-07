@@ -21,18 +21,12 @@ def repeat string, int = 0
 end
 
 def start_of_word entry, int = 1
-  start = Array.new
-  start = entry.split
   result = Array.new
-  entry.each_char { |chr, i|
+  entry.each_char.with_index do |chr, i|
     if i < int
       result.push(chr)
     end
-  }
-  puts entry
-  puts start
-  puts result
-  return result.reduce()
-end
+  end
+  puts result.join("")
 
-start_of_word "Bentley"
+end

@@ -1,8 +1,3 @@
-#write your code here
-#rules for Pig Latin
-#if a word begins with a vowel sound, add "ay" sound to the end
-#If a word begins with a consonant sound, move it to the end of the word and add "ay" sound tot eh end of the word.
-
 def translate entry
   final = ""
   vowel_sounds = ["a","e","i","o","u"]
@@ -51,5 +46,3 @@ def translate entry
   final = to_translate.join(" ")
   return final
 end
-
-translate "cherry"

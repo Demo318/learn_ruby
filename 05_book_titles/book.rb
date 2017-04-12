@@ -1,20 +1,20 @@
+
 class Book
 
-  def initialize name
+
+
+  def title=(string)
     little_words = ["the", "a", "an", "and", "or", "nor", "in", "of"]
-    name = name.split(" ")
-    name.each_with_index do |x, i|
+    string = string.split(" ")
+    string.each_with_index do |x, i|
       unless little_words.include? x
-        name[i] = x.capitalize
+        string[i] = x.capitalize
       end
       if i == 0
-        name[i] = x.capitalize
+        string[i] = x.capitalize
       end
       end
-
-    @name = name.join(" ")
-    @title = @name
-    return @title
+    @title = string.join(" ")
     end
 
     def title

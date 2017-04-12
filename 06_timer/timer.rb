@@ -1,19 +1,22 @@
 class Timer
-  #write your code here
+  attr_accessor :seconds, :time_string
 
+  def time_string
+  @hours = (@seconds / (60*60))
+  @seconds = @seconds % (60*60)
+  @minutes = (@seconds/ 60)
+  @seconds = @seconds % 60
+  result = [@hours.to_s, @minutes.to_s, @seconds.to_s]
+  result.each_with_index do |x, i|
+    if x.length < 2
+      t_arr = ["0", x]
+      result[i] = t_arr.join("")
+    end
+  end
+  @time_string = result.join(":")
+  end
 
-
+  def seconds
+    @seconds = 0
+  end
 end
-puts "How many seconds?"
-number = gets.chomp.to_i
-hours = number / (60*60)
-number = number % (60*60)
-minutes = number / 60
-number = number % 60
-seconds = number
-number = number - seconds
-
-puts "Hours: #{hours}."
-puts "Minutes: #{minutes}."
-puts "Seconds: #{seconds}."
-puts "There are #{number}."

@@ -1,19 +1,23 @@
 class Book
 
   def initialize name
+    little_words = ["the", "a", "an", "and", "or", "nor", "in", "of"]
     name = name.split(" ")
-    name.each.with_index do |x, i|
-      if 1 != 1 #if word shows up in little words catorgory and index isn't equal to zero
-        #do nothing
-      else
-        #capitalize
+    name.each_with_index do |x, i|
+      unless little_words.include? x
+        name[i] = x.capitalize
       end
-    #rejoin words together into string, and assign to @title
+      if i == 0
+        name[i] = x.capitalize
+      end
+      end
+
+    @name = name.join(" ")
+    @title = @name
+    return @title
+    end
+
+    def title
+      return @title
     end
 end
-
-
-
-end
-
-Book.new "timmy has a title."
